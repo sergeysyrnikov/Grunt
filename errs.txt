@@ -1,0 +1,17 @@
+# rtsp_cam_out_gard = 'rtsp://admin:admin@10.2.165.103:554/cam/realmonitor?channel=1&subtype=0'
+# rtsp_cam_in_gard = 'rtsp://admin:admin@10.2.165.104:554/cam/realmonitor?channel=1&subtype=0'
+# rtsp_cam_in_weight = 'rtsp://admin:qwe123456@10.2.165.101:554/cam/realmonitor?channel=1&subtype=0'
+# rtsp_cam_out_weight = 'rtsp://admin:qwe123456@10.2.165.102:554/cam/realmonitor?channel=1&subtype=0'
+
+k = 0 103 КППВыезд
+к = 1 104 КППвъезд
+к = 2 102 ВесыВъезд
+k = 3 101 ВесыВыезд
+
+1. нет коннекта весы не стал красным
+2. поправить ширину таблиц
+3. белый шрифт при редактировании в тёмной
+4. геометрия в третьей записе грз
+5. самый первый раз не записывает грз в ячейку
+6. апдэйт после выводов грз 
+7. убрать стайлшиты реков из листов, прописать в ране
