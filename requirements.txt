@@ -1,0 +1,4 @@
+PyQt5==5.15.3
+setuptools==54.0.0
+pyserial==3.5
+PyMySql==0.9.3

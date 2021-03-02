@@ -12,7 +12,7 @@ curDisk = 'Data'
 import tempfile
 
 pathTemp = str(tempfile.gettempdir()).replace('\\', '/')
-diskForTimeFiles = '/usr/local/Sinaps/Storage'
+diskForTimeFiles = 'Data/Sinaps/Storage'
 
 passwdLogin = '34ubitav'
 
@@ -78,7 +78,7 @@ checkRestartExe = False
 #################XLS File
 
 # pathFileXls = str(os.getenv('APPDATA')) + r'\Sinaps\cryptoSSA.xlsx'
-pathFileXls = '/usr/local/Sinaps/cryptoSSA.xlsx'
+pathFileXls = 'Data/Sinaps/cryptoSSA.xlsx'
 
 find_zakaz = False
 
@@ -320,9 +320,9 @@ colorForm = 0
 
 # pathDefaultData = str(os.getenv('APPDATA'))
 
-pathDefaultData = '/usr/local'
+pathDefaultData = 'Data'
 
-pathDefFldr = '/usr/local/Sinaps'
+pathDefFldr = 'Data'
 
 pathOnVif = pathDefFldr + '/wsdl'
 
@@ -331,14 +331,14 @@ print('serhio123')
 
 # pathStyleImgs = pathDefFldr + '\img\\'
 
-pathStyleImgs = '/usr/local/Sinaps/img/'
+pathStyleImgs = 'Data/Sinaps/img/'
 # pathStyleImgs = '/home/sergey/123/imgStrg/'
 
 # pathStyleImgs = pathStyleImgs.replace('\\', '/')
 # pathStyleImgs = 'C:/Users/Admin/AppData/Roaming/Sinaps/img/'
 
 
-pathFileTiming = ('/usr/local/Sinaps/timing.xlsx')
+pathFileTiming = ('Data/Sinaps/timing.xlsx')
 # pathFileTiming = 'C:/Users/Admin/AppData/Roaming/Sinaps/timing.xlsx'
 
 print(pathStyleImgs)

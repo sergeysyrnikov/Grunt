@@ -1,5 +1,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QApplication, QLabel, QFrame, QDialog, QPushButton, QScrollBar, QTreeWidget
+from PyQt5.QtGui import QFont
+from PyQt5.QtCore import Qt, QCoreApplication, QMetaObject, QRect
 import threading
 import time
 import sys
@@ -499,253 +502,252 @@ class Ui_add_TS(QDialog):
         self.label_26.setText(_translate("Dialog", "Колесная формула:"))
 
     def firstCall(self):
-
         self.lstLight = [[self.label,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);\n"
-"border-radius: 3px;"],
+                "color: rgb(0,0,0);\n"
+                "border-radius: 3px;"],
         [self.label_4,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
+                "color: rgb(0,0,0);"],
         [self.btnAddZakaz,"QPushButton:!hover {background-color: rgb(227,227,227);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(135,135,135);}\n"
-"QPushButton:hover {background-color: rgb(84,122,181);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);}\n"
-"QPushButton:hover:pressed {background-color: rgb(50,75,115);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);};"],
+                "color: rgb(0,0,0);\n"
+                "border-radius:3px;\n"
+                "border:1px solid rgb(135,135,135);}\n"
+                "QPushButton:hover {background-color: rgb(84,122,181);\n"
+                "color: rgb(255, 255, 255);\n"
+                "border-radius:3px;\n"
+                "border:1px solid rgb(63,63,63);}\n"
+                "QPushButton:hover:pressed {background-color: rgb(50,75,115);\n"
+                "color: rgb(255, 255, 255);\n"
+                "border-radius:3px;\n"
+                "border:1px solid rgb(63,63,63);};"],
         [self.leCompany,"background-color: rgb(255,255,255);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border: 1px solid rgb(150,150,150);"],
+                "color: rgb(0,0,0);\n"
+                "border-radius:3px;\n"
+                "border: 1px solid rgb(150,150,150);"],
         [self.label_8,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
+                "color: rgb(0,0,0);"],
         [self.label_9,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
+                "color: rgb(0,0,0);"],
         [self.leTSgrz,"background-color: rgb(255,255,255);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border: 1px solid rgb(150,150,150);"],
+                "color: rgb(0,0,0);\n"
+                "border-radius:3px;\n"
+                "border: 1px solid rgb(150,150,150);"],
         [self.leTScreatdate,"background-color: rgb(255,255,255);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border: 1px solid rgb(150,150,150);"],
+                "color: rgb(0,0,0);\n"
+                "border-radius:3px;\n"
+                "border: 1px solid rgb(150,150,150);"],
         [self.label_10,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.label_11,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.leTSweightEmpty,"background-color: rgb(255,255,255);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border: 1px solid rgb(150,150,150);"],
-        [self.label_12,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.leTSdvigVilume,"background-color: rgb(255,255,255);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border: 1px solid rgb(150,150,150);"],
-        [self.leTSweightMaxAllow,"background-color: rgb(255,255,255);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border: 1px solid rgb(150,150,150);"],
-        [self.label_13,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.label_14,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.leTSpowerLS,"background-color: rgb(255,255,255);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border: 1px solid rgb(150,150,150);"],
-        [self.label_15,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.lblIconJournal,"background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(89, 89, 89, 0), stop:1 rgba(62, 62, 62, 0));\n"
-"image: url(" + globalValues.pathStyleImgs + "iconworkpanel1.png);"],
-        [self.line_7,"background-color: rgb(242,242,242);"],
-        [self.line_8,"background-color: rgb(242,242,242);"],
-        [self.line_9,"background-color: rgb(242,242,242);"],
-        [self.lblBack,"background-color: rgb(242,242,242);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius: 3px;"],
-        [self.cb_TSname,"background-color: rgb(227,227,227);\n"
-"color: black;\n"
-"border-radius: 3px;\n"
-"border: 1px solid rgb(135,135,135);"],
-        [self.leTSname,"background-color: rgb(255,255,255);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border: 1px solid rgb(150,150,150);"],
-        [self.line_4,"background-color: rgb(242,242,242);"],
-        [self.line_5,"background-color: rgb(242,242,242);"],
-        [self.line_6,"background-color: rgb(242,242,242);"],
-        [self.line_10,"background-color: rgb(242,242,242);"],
-        [self.cb_EurocCassNUM,"background-color: rgb(227,227,227);\n"
-"color: black;\n"
-"border-radius: 3px;\n"
-"border: 1px solid rgb(135,135,135);"],
-        [self.line_11,"background-color: rgb(242,242,242);"],
-        [self.line_12,"background-color: rgb(242,242,242);"],
-        [self.leTSpowerkWt,"background-color: rgb(255,255,255);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border: 1px solid rgb(150,150,150);"],
-        [self.label_17,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.label_18,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.line_15,"background-color: rgb(242,242,242);"],
-        [self.label_19,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.label_20,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.label_16,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.label_21,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.line_16,"background-color: rgb(242,242,242);"],
-        [self.label_22,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.leTSweightGruntMaxAllow,"background-color: rgb(255,255,255);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border: 1px solid rgb(150,150,150);"],
-        [self.label_23,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.label_24,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.label_25,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.leTSvolumeMax,"background-color: rgb(255,255,255);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border: 1px solid rgb(150,150,150);"],
-        [self.label_26,"background-color: rgb(242,242,242);\n"
-"color: rgb(0,0,0);"],
-        [self.leTSwheelScheme,"background-color: rgb(255,255,255);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border: 1px solid rgb(150,150,150);"]]
-        self.lstDark = [[self.label,"background-color: rgb(75,75,75);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius: 3px;"],
-        [self.label_4,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.btnAddZakaz,"QPushButton:!hover {background-color: rgb(89,89,89);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);}\n"
-"QPushButton:hover {background-color: rgb(84,122,181);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);}\n"
-"QPushButton:hover:pressed {background-color: rgb(50,75,115);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);};"],
-        [self.leCompany,"background-color: white;\n"
-"border-radius:3px;"],
-        [self.label_8,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.label_9,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.leTSgrz,"background-color: white;\n"
-"border-radius:3px;"],
-        [self.leTScreatdate,"background-color: white;\n"
-"border-radius:3px;"],
-        [self.label_10,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.label_11,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.leTSweightEmpty,"background-color: white;\n"
-"border-radius:3px;"],
-        [self.label_12,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.leTSdvigVilume,"background-color: white;\n"
-"border-radius:3px;"],
-        [self.leTSweightMaxAllow,"background-color: white;\n"
-"border-radius:3px;"],
-        [self.label_13,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.label_14,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.leTSpowerLS,"background-color: white;\n"
-"border-radius:3px;"],
-        [self.label_15,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.lblIconJournal,"background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(89, 89, 89, 0), stop:1 rgba(62, 62, 62, 0));\n"
-"image: url(" + globalValues.pathStyleImgs + "iconworkpanel1.png);"],
-        [self.line_7,"background-color: rgb(75,75,75);"],
-        [self.line_8,"background-color: rgb(75,75,75);"],
-        [self.line_9,"background-color: rgb(75,75,75);"],
-        [self.lblBack,"background-color: rgb(75,75,75);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius: 3px;"],
-        [self.cb_TSname,"background-color: white;\n"
-"border-radius:3px;"],
-        [self.leTSname,"background-color: white;\n"
-"border-radius:3px;"],
-        [self.line_4,"background-color: rgb(75,75,75);"],
-        [self.line_5,"background-color: rgb(75,75,75);"],
-        [self.line_6,"background-color: rgb(75,75,75);"],
-        [self.line_10,"background-color: rgb(75,75,75);"],
-        [self.cb_EurocCassNUM,"background-color: white;\n"
-"border-radius:3px;"],
-        [self.line_11,"background-color: rgb(75,75,75);"],
-        [self.line_12,"background-color: rgb(75,75,75);"],
-        [self.leTSpowerkWt,"background-color: white;\n"
-"border-radius:3px;"],
-        [self.label_17,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.label_18,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.line_15,"background-color: rgb(75,75,75);"],
-        [self.label_19,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.label_20,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.label_16,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.label_21,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.line_16,"background-color: rgb(75,75,75);"],
-        [self.label_22,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.leTSweightGruntMaxAllow,"background-color: white;\n"
-"border-radius:3px;"],
-        [self.label_23,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.label_24,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.label_25,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.leTSvolumeMax,"background-color: white;\n"
-"border-radius:3px;"],
-        [self.label_26,"background-color: rgb(75,75,75);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.leTSwheelScheme,"background-color: white;\n"
-"border-radius:3px;"]]
+                "color: rgb(0,0,0);"],
+                        [self.label_11,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.leTSweightEmpty,"background-color: rgb(255,255,255);\n"
+                "color: rgb(0,0,0);\n"
+                "border-radius:3px;\n"
+                "border: 1px solid rgb(150,150,150);"],
+                        [self.label_12,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.leTSdvigVilume,"background-color: rgb(255,255,255);\n"
+                "color: rgb(0,0,0);\n"
+                "border-radius:3px;\n"
+                "border: 1px solid rgb(150,150,150);"],
+                        [self.leTSweightMaxAllow,"background-color: rgb(255,255,255);\n"
+                "color: rgb(0,0,0);\n"
+                "border-radius:3px;\n"
+                "border: 1px solid rgb(150,150,150);"],
+                        [self.label_13,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.label_14,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.leTSpowerLS,"background-color: rgb(255,255,255);\n"
+                "color: rgb(0,0,0);\n"
+                "border-radius:3px;\n"
+                "border: 1px solid rgb(150,150,150);"],
+                        [self.label_15,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.lblIconJournal,"background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(89, 89, 89, 0), stop:1 rgba(62, 62, 62, 0));\n"
+                "image: url(" + globalValues.pathStyleImgs + "iconworkpanel1.png);"],
+                        [self.line_7,"background-color: rgb(242,242,242);"],
+                        [self.line_8,"background-color: rgb(242,242,242);"],
+                        [self.line_9,"background-color: rgb(242,242,242);"],
+                        [self.lblBack,"background-color: rgb(242,242,242);\n"
+                "color: rgb(255, 255, 255);\n"
+                "border-radius: 3px;"],
+                        [self.cb_TSname,"background-color: rgb(227,227,227);\n"
+                "color: black;\n"
+                "border-radius: 3px;\n"
+                "border: 1px solid rgb(135,135,135);"],
+                        [self.leTSname,"background-color: rgb(255,255,255);\n"
+                "color: rgb(0,0,0);\n"
+                "border-radius:3px;\n"
+                "border: 1px solid rgb(150,150,150);"],
+                        [self.line_4,"background-color: rgb(242,242,242);"],
+                        [self.line_5,"background-color: rgb(242,242,242);"],
+                        [self.line_6,"background-color: rgb(242,242,242);"],
+                        [self.line_10,"background-color: rgb(242,242,242);"],
+                        [self.cb_EurocCassNUM,"background-color: rgb(227,227,227);\n"
+                "color: black;\n"
+                "border-radius: 3px;\n"
+                "border: 1px solid rgb(135,135,135);"],
+                        [self.line_11,"background-color: rgb(242,242,242);"],
+                        [self.line_12,"background-color: rgb(242,242,242);"],
+                        [self.leTSpowerkWt,"background-color: rgb(255,255,255);\n"
+                "color: rgb(0,0,0);\n"
+                "border-radius:3px;\n"
+                "border: 1px solid rgb(150,150,150);"],
+                        [self.label_17,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.label_18,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.line_15,"background-color: rgb(242,242,242);"],
+                        [self.label_19,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.label_20,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.label_16,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.label_21,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.line_16,"background-color: rgb(242,242,242);"],
+                        [self.label_22,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.leTSweightGruntMaxAllow,"background-color: rgb(255,255,255);\n"
+                "color: rgb(0,0,0);\n"
+                "border-radius:3px;\n"
+                "border: 1px solid rgb(150,150,150);"],
+                        [self.label_23,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.label_24,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.label_25,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.leTSvolumeMax,"background-color: rgb(255,255,255);\n"
+                "color: rgb(0,0,0);\n"
+                "border-radius:3px;\n"
+                "border: 1px solid rgb(150,150,150);"],
+                        [self.label_26,"background-color: rgb(242,242,242);\n"
+                "color: rgb(0,0,0);"],
+                        [self.leTSwheelScheme,"background-color: rgb(255,255,255);\n"
+                "color: rgb(0,0,0);\n"
+                "border-radius:3px;\n"
+                "border: 1px solid rgb(150,150,150);"]]
+                        self.lstDark = [[self.label,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255, 255, 255);\n"
+                "border-radius: 3px;"],
+                        [self.label_4,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.btnAddZakaz,"QPushButton:!hover {background-color: rgb(89,89,89);\n"
+                "color: rgb(255, 255, 255);\n"
+                "border-radius:3px;\n"
+                "border:1px solid rgb(63,63,63);}\n"
+                "QPushButton:hover {background-color: rgb(84,122,181);\n"
+                "color: rgb(255, 255, 255);\n"
+                "border-radius:3px;\n"
+                "border:1px solid rgb(63,63,63);}\n"
+                "QPushButton:hover:pressed {background-color: rgb(50,75,115);\n"
+                "color: rgb(255, 255, 255);\n"
+                "border-radius:3px;\n"
+                "border:1px solid rgb(63,63,63);};"],
+                        [self.leCompany,"background-color: white;\n"
+                "border-radius:3px;"],
+                        [self.label_8,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.label_9,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.leTSgrz,"background-color: white;\n"
+                "border-radius:3px;"],
+                        [self.leTScreatdate,"background-color: white;\n"
+                "border-radius:3px;"],
+                        [self.label_10,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.label_11,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.leTSweightEmpty,"background-color: white;\n"
+                "border-radius:3px;"],
+                        [self.label_12,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.leTSdvigVilume,"background-color: white;\n"
+                "border-radius:3px;"],
+                        [self.leTSweightMaxAllow,"background-color: white;\n"
+                "border-radius:3px;"],
+                        [self.label_13,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.label_14,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.leTSpowerLS,"background-color: white;\n"
+                "border-radius:3px;"],
+                        [self.label_15,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.lblIconJournal,"background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(89, 89, 89, 0), stop:1 rgba(62, 62, 62, 0));\n"
+                "image: url(" + globalValues.pathStyleImgs + "iconworkpanel1.png);"],
+                        [self.line_7,"background-color: rgb(75,75,75);"],
+                        [self.line_8,"background-color: rgb(75,75,75);"],
+                        [self.line_9,"background-color: rgb(75,75,75);"],
+                        [self.lblBack,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255, 255, 255);\n"
+                "border-radius: 3px;"],
+                        [self.cb_TSname,"background-color: white;\n"
+                "border-radius:3px;"],
+                        [self.leTSname,"background-color: white;\n"
+                "border-radius:3px;"],
+                        [self.line_4,"background-color: rgb(75,75,75);"],
+                        [self.line_5,"background-color: rgb(75,75,75);"],
+                        [self.line_6,"background-color: rgb(75,75,75);"],
+                        [self.line_10,"background-color: rgb(75,75,75);"],
+                        [self.cb_EurocCassNUM,"background-color: white;\n"
+                "border-radius:3px;"],
+                        [self.line_11,"background-color: rgb(75,75,75);"],
+                        [self.line_12,"background-color: rgb(75,75,75);"],
+                        [self.leTSpowerkWt,"background-color: white;\n"
+                "border-radius:3px;"],
+                        [self.label_17,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.label_18,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.line_15,"background-color: rgb(75,75,75);"],
+                        [self.label_19,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.label_20,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.label_16,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.label_21,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.line_16,"background-color: rgb(75,75,75);"],
+                        [self.label_22,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.leTSweightGruntMaxAllow,"background-color: white;\n"
+                "border-radius:3px;"],
+                        [self.label_23,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.label_24,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.label_25,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.leTSvolumeMax,"background-color: white;\n"
+                "border-radius:3px;"],
+                        [self.label_26,"background-color: rgb(75,75,75);\n"
+                "color: rgb(255,255,255);\n"
+                "border-radius: 5px;"],
+                        [self.leTSwheelScheme,"background-color: white;\n"
+                "border-radius:3px;"]]
 
         self.lengthLight = len(self.lstLight)
         self.lengthDark = len(self.lstDark)

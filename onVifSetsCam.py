@@ -1,7 +1,8 @@
 import zeep
 from onvif import ONVIFCamera
+import globalValues
 
-cam = ONVIFCamera('10.2.165.101', 80, 'admin', 'admin', 'E:/grunt64venv/Lib/site-packages/wsdl/')
+cam = ONVIFCamera('10.2.165.101', 80, 'admin', 'admin', globalValues.curDisk + '/wsdl/')
 
 print(cam.devicemgmt.GetDeviceInformation())
 check = True

@@ -1,10 +1,12 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QDialog
+from PyQt5.QtWidgets import QApplication, QLabel, QFrame, QDialog
+from PyQt5.QtGui import QFont
+from PyQt5.QtCore import Qt, QCoreApplication, QMetaObject, QRect
+
 import time
 import sys
 import globalValues
 
-app = QtWidgets.QApplication(sys.argv)
+app = QApplication(sys.argv)
 
 
 class Ui_systemMenu(QDialog):
@@ -23,50 +25,50 @@ class Ui_systemMenu(QDialog):
     def runUi(self):
         self.setObjectName("Dialog")
         self.setFixedSize(1003, 390)
-        self.label = QtWidgets.QLabel(self)
-        self.label.setGeometry(QtCore.QRect(331, -5, 341, 47))
-        font = QtGui.QFont()
+        self.label = QLabel(self)
+        self.label.setGeometry(QRect(331, -5, 341, 47))
+        font = QFont()
         font.setFamily("Arial")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
         self.label.setFont(font)
         self.label.setObjectName("label")
-        self.lblIconJournal = QtWidgets.QLabel(self)
-        self.lblIconJournal.setGeometry(QtCore.QRect(301, 8, 23, 23))
+        self.lblIconJournal = QLabel(self)
+        self.lblIconJournal.setGeometry(QRect(301, 8, 23, 23))
         self.lblIconJournal.setText("")
         self.lblIconJournal.setObjectName("lblIconJournal")
-        self.line = QtWidgets.QFrame(self)
-        self.line.setGeometry(QtCore.QRect(303, 35, 370, 2))
-        self.line.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line = QFrame(self)
+        self.line.setGeometry(QRect(303, 35, 370, 2))
+        self.line.setFrameShape(QFrame.HLine)
+        self.line.setFrameShadow(QFrame.Sunken)
         self.line.setObjectName("line")
-        self.label_50 = QtWidgets.QLabel(self)
-        self.label_50.setGeometry(QtCore.QRect(35, 60, 961, 321))
-        self.label_50.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.label_50 = QLabel(self)
+        self.label_50.setGeometry(QRect(35, 60, 961, 321))
+        self.label_50.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.label_50.setObjectName("label_50")
-        self.lblBack = QtWidgets.QLabel(self)
-        self.lblBack.setGeometry(QtCore.QRect(0, 0, 1003, 391))
+        self.lblBack = QLabel(self)
+        self.lblBack.setGeometry(QRect(0, 0, 1003, 391))
         self.lblBack.setObjectName("lblBack")
-        self.label_51 = QtWidgets.QLabel(self)
-        self.label_51.setGeometry(QtCore.QRect(10, 95, 30, 30))
+        self.label_51 = QLabel(self)
+        self.label_51.setGeometry(QRect(10, 95, 30, 30))
         self.label_51.setText("")
-        self.label_51.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.label_51.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.label_51.setObjectName("label_51")
-        self.label_52 = QtWidgets.QLabel(self)
-        self.label_52.setGeometry(QtCore.QRect(10, 159, 30, 30))
+        self.label_52 = QLabel(self)
+        self.label_52.setGeometry(QRect(10, 159, 30, 30))
         self.label_52.setText("")
-        self.label_52.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.label_52.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.label_52.setObjectName("label_52")
-        self.label_53 = QtWidgets.QLabel(self)
-        self.label_53.setGeometry(QtCore.QRect(10, 220, 30, 30))
+        self.label_53 = QLabel(self)
+        self.label_53.setGeometry(QRect(10, 220, 30, 30))
         self.label_53.setText("")
-        self.label_53.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.label_53.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.label_53.setObjectName("label_53")
-        self.label_54 = QtWidgets.QLabel(self)
-        self.label_54.setGeometry(QtCore.QRect(10, 300, 30, 30))
+        self.label_54 = QLabel(self)
+        self.label_54.setGeometry(QRect(10, 300, 30, 30))
         self.label_54.setText("")
-        self.label_54.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.label_54.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.label_54.setObjectName("label_54")
         self.lblBack.raise_()
         self.label_50.raise_()
@@ -79,12 +81,12 @@ class Ui_systemMenu(QDialog):
         self.label_54.raise_()
 
         self.retranslateUi()
-        QtCore.QMetaObject.connectSlotsByName(self)
+        QMetaObject.connectSlotsByName(self)
         # self.runThJournal()
         self.firstCall()
 
     def retranslateUi(self):
-        _translate = QtCore.QCoreApplication.translate
+        _translate = QCoreApplication.translate
         self.setWindowTitle(_translate("Dialog", "Панель справки системного меню"))
         self.label.setText(_translate("Dialog", "Справка \"Панель настройки камер\""))
         self.label_50.setText(_translate("Dialog", "      Панель настройки камер содержит 4 элемента управления:\n\n\n"
@@ -104,58 +106,58 @@ class Ui_systemMenu(QDialog):
 
         self.lstLight = [[self.label,"background-color: rgb(242,242,242);"],
         [self.lblIconJournal,"background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(89, 89, 89, 0), stop:1 rgba(62, 62, 62, 0));\n"
-"image: url(" + globalValues.pathStyleImgs + "iconworkpanel1.png);"],
-        [self.label_50,"background-color: rgb(242,242,242);\n"
-"font: 10pt \"Arial\";"],
-        [self.lblBack,"background-color: rgb(242,242,242);"],
-        [self.label_51,"background-color: rgb(242,242,242); \n"
-"color: rgb(255,255,255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);\n"
-"image: url(" + globalValues.pathStyleImgs + "iconarchset2.png);"],
-        [self.label_52,"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(9, 131, 25, 255), stop:1 rgba(9, 185, 32, 255));\n"
-"color: rgb(255,255,255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);\n"
-"image: url(" + globalValues.pathStyleImgs + "iconpluscam3.png);"],
-        [self.label_53,"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(223, 0, 0, 255), stop:1 rgba(255, 100, 100, 255));\n"
-"color: rgb(255,255,255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);\n"
-"image: url(" + globalValues.pathStyleImgs + "iconminuscam.png);"],
-        [self.label_54,"background-color:  qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(89, 89, 89, 255), stop:1 rgba(143, 141, 141, 255));\n"
-"color: rgb(255,255,255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);\n"
-"image: url(" + globalValues.pathStyleImgs + "iconprintset10.png);"]]
+        "image: url(" + globalValues.pathStyleImgs + "iconworkpanel1.png);"],
+                [self.label_50,"background-color: rgb(242,242,242);\n"
+        "font: 10pt \"Arial\";"],
+                [self.lblBack,"background-color: rgb(242,242,242);"],
+                [self.label_51,"background-color: rgb(242,242,242); \n"
+        "color: rgb(255,255,255);\n"
+        "border-radius:3px;\n"
+        "border:1px solid rgb(63,63,63);\n"
+        "image: url(" + globalValues.pathStyleImgs + "iconarchset2.png);"],
+                [self.label_52,"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(9, 131, 25, 255), stop:1 rgba(9, 185, 32, 255));\n"
+        "color: rgb(255,255,255);\n"
+        "border-radius:3px;\n"
+        "border:1px solid rgb(63,63,63);\n"
+        "image: url(" + globalValues.pathStyleImgs + "iconpluscam3.png);"],
+                [self.label_53,"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(223, 0, 0, 255), stop:1 rgba(255, 100, 100, 255));\n"
+        "color: rgb(255,255,255);\n"
+        "border-radius:3px;\n"
+        "border:1px solid rgb(63,63,63);\n"
+        "image: url(" + globalValues.pathStyleImgs + "iconminuscam.png);"],
+                [self.label_54,"background-color:  qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(89, 89, 89, 255), stop:1 rgba(143, 141, 141, 255));\n"
+        "color: rgb(255,255,255);\n"
+        "border-radius:3px;\n"
+        "border:1px solid rgb(63,63,63);\n"
+        "image: url(" + globalValues.pathStyleImgs + "iconprintset10.png);"]]
         self.lstDark = [[self.label,"background-color: rgb(66,66,66);\n"
-"color: white;"],
-        [self.lblIconJournal,"background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(89, 89, 89, 0), stop:1 rgba(62, 62, 62, 0));\n"
-"image: url(" + globalValues.pathStyleImgs + "iconworkpanel1.png);"],
-        [self.label_50,"background-color: rgb(66,66,66);\n"
-"color:white;\n"
-"font: 10pt \"Arial\";"],
-        [self.lblBack,"background-color: rgb(66,66,66);"],
-        [self.label_51,"background-color: rgb(242,242,242); \n"
-"color: rgb(255,255,255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);\n"
-"image: url(" + globalValues.pathStyleImgs + "iconarchset2.png);"],
-        [self.label_52,"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(9, 131, 25, 255), stop:1 rgba(9, 185, 32, 255));\n"
-"color: rgb(255,255,255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);\n"
-"image: url(" + globalValues.pathStyleImgs + "iconpluscam3.png);"],
-        [self.label_53,"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(223, 0, 0, 255), stop:1 rgba(255, 100, 100, 255));\n"
-"color: rgb(255,255,255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);\n"
-"image: url(" + globalValues.pathStyleImgs + "iconminuscam.png);"],
-        [self.label_54,"background-color:  qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(89, 89, 89, 255), stop:1 rgba(143, 141, 141, 255));\n"
-"color: rgb(255,255,255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);\n"
-"image: url(" + globalValues.pathStyleImgs + "iconprintset10.png);"]]
+        "color: white;"],
+                [self.lblIconJournal,"background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(89, 89, 89, 0), stop:1 rgba(62, 62, 62, 0));\n"
+        "image: url(" + globalValues.pathStyleImgs + "iconworkpanel1.png);"],
+                [self.label_50,"background-color: rgb(66,66,66);\n"
+        "color:white;\n"
+        "font: 10pt \"Arial\";"],
+                [self.lblBack,"background-color: rgb(66,66,66);"],
+                [self.label_51,"background-color: rgb(242,242,242); \n"
+        "color: rgb(255,255,255);\n"
+        "border-radius:3px;\n"
+        "border:1px solid rgb(63,63,63);\n"
+        "image: url(" + globalValues.pathStyleImgs + "iconarchset2.png);"],
+                [self.label_52,"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(9, 131, 25, 255), stop:1 rgba(9, 185, 32, 255));\n"
+        "color: rgb(255,255,255);\n"
+        "border-radius:3px;\n"
+        "border:1px solid rgb(63,63,63);\n"
+        "image: url(" + globalValues.pathStyleImgs + "iconpluscam3.png);"],
+                [self.label_53,"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(223, 0, 0, 255), stop:1 rgba(255, 100, 100, 255));\n"
+        "color: rgb(255,255,255);\n"
+        "border-radius:3px;\n"
+        "border:1px solid rgb(63,63,63);\n"
+        "image: url(" + globalValues.pathStyleImgs + "iconminuscam.png);"],
+                [self.label_54,"background-color:  qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(89, 89, 89, 255), stop:1 rgba(143, 141, 141, 255));\n"
+        "color: rgb(255,255,255);\n"
+        "border-radius:3px;\n"
+        "border:1px solid rgb(63,63,63);\n"
+        "image: url(" + globalValues.pathStyleImgs + "iconprintset10.png);"]]
 
         self.lengthLight = len(self.lstLight)
         self.lengthDark = len(self.lstDark)
@@ -199,7 +201,7 @@ class Ui_systemMenu(QDialog):
 
 
 if __name__ == "__main__":
-    # app = QtWidgets.QApplication(sys.argv)
+    # app = QApplication(sys.argv)
     uiJournal = Ui_systemMenu()
 
     uiJournal.show()
