@@ -11,10 +11,10 @@ con = pymysql.connect(host='localhost',
                                    passwd='34ubitav',
                                    db=globalValues.dbMySqlName)
 cur = con.cursor()
-
 sqlQ = ("SELECT reg_number FROM " + globalValues.tblsDB[6])
 cur.execute(sqlQ)
 rowsGRZPool = cur.fetchall()
+
 for row in rowsGRZPool:
     globalValues.listPoolTS.append(str(row[0]))
 
@@ -22,7 +22,6 @@ cur.close()
 con.close()
 
 listGrz = globalValues.listPoolTS
-
 
 def scanDataFromPoly(strGRZ, lstDataBD, list_grz_zakaz, name_st_order, debug):
     try:

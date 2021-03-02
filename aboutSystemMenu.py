@@ -1,8 +1,10 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QApplication, QLabel, QFrame, QDialog
+from PyQt5.QtGui import QFont
+from PyQt5.QtCore import Qt, QCoreApplication, QMetaObject, QRect
 import globalValues
 import time
 
-class Ui_AboutSysMenu(QtWidgets.QDialog):
+class Ui_AboutSysMenu(QDialog):
 
     lstLight = [[]]
     lstDark = [[]]
@@ -17,30 +19,30 @@ class Ui_AboutSysMenu(QtWidgets.QDialog):
             self.setObjectName("Dialog")
             self.setFixedSize(1003, 665)
             self.setStyleSheet("")
-            self.label = QtWidgets.QLabel(self)
-            self.label.setGeometry(QtCore.QRect(370, -5, 295, 47))
-            font = QtGui.QFont()
+            self.label = QLabel(self)
+            self.label.setGeometry(Rect(370, -5, 295, 47))
+            font = QFont()
             font.setFamily("Arial")
             font.setPointSize(14)
             font.setBold(True)
             font.setWeight(75)
             self.label.setFont(font)
             self.label.setObjectName("label")
-            self.lblIconJournal = QtWidgets.QLabel(self)
-            self.lblIconJournal.setGeometry(QtCore.QRect(340, 8, 23, 23))
+            self.lblIconJournal = QLabel(self)
+            self.lblIconJournal.setGeometry(QRect(340, 8, 23, 23))
             self.lblIconJournal.setText("")
             self.lblIconJournal.setObjectName("lblIconJournal")
-            self.line = QtWidgets.QFrame(self)
-            self.line.setGeometry(QtCore.QRect(342, 31, 315, 8))
-            self.line.setFrameShape(QtWidgets.QFrame.HLine)
-            self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+            self.line = QFrame(self)
+            self.line.setGeometry(QRect(342, 31, 315, 8))
+            self.line.setFrameShape(QFrame.HLine)
+            self.line.setFrameShadow(QFrame.Sunken)
             self.line.setObjectName("line")
-            self.label_50 = QtWidgets.QLabel(self)
-            self.label_50.setGeometry(QtCore.QRect(20, 60, 966, 611))
-            self.label_50.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+            self.label_50 = QLabel(self)
+            self.label_50.setGeometry(QRect(20, 60, 966, 611))
+            self.label_50.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignTop)
             self.label_50.setObjectName("label_50")
-            self.lblBack = QtWidgets.QLabel(self)
-            self.lblBack.setGeometry(QtCore.QRect(0, 0, 1003, 671))
+            self.lblBack = QLabel(self)
+            self.lblBack.setGeometry(QRect(0, 0, 1003, 671))
             self.lblBack.setText("")
             self.lblBack.setObjectName("lblBack")
             self.lblBack.raise_()
@@ -50,12 +52,12 @@ class Ui_AboutSysMenu(QtWidgets.QDialog):
             self.line.raise_()
 
             self.retranslateUi()
-            QtCore.QMetaObject.connectSlotsByName(self)
+            QMetaObject.connectSlotsByName(self)
             # self.runThJournal()
             self.firstCall()
 
     def retranslateUi(self):
-            _translate = QtCore.QCoreApplication.translate
+            _translate = QCoreApplication.translate
             self.setWindowTitle(_translate("Dialog", "Панель справки"))
             self.label.setText(_translate("Dialog", "Справка \"Настройки системы\""))
             self.label_50.setText(_translate("Dialog",
@@ -159,7 +161,7 @@ class Ui_AboutSysMenu(QtWidgets.QDialog):
 
 if __name__ == "__main__":
     import sys
-    app = QtWidgets.QApplication(sys.argv)
+    app = QApplication(sys.argv)
     ui = Ui_AboutSysMenu()
     ui.show()
     sys.exit(app.exec_())

@@ -1,4 +1,4 @@
-import openpyxl
+from openpyxl import load_workbook
 import time
 import globalValues
 import datetime
@@ -10,7 +10,7 @@ lst_data_new = []
 def dataFromXls(pathFile):
 
     try:
-        book = openpyxl.load_workbook(pathFile)
+        book = load_workbook(pathFile)
 
         sheets = book.sheetnames
 
@@ -60,9 +60,6 @@ def dataFromXls(pathFile):
 
 lst_data_new = dataFromXls(pathFile)
 
-
-
-
 def time_cur_in_out(lst_data_timing):
     try:
         dateToday = datetime.date.today().strftime('%d.%m.%Y')
@@ -109,20 +106,15 @@ def time_cur_in_out(lst_data_timing):
 
 
 res_def = time_cur_in_out(lst_data_new)
-
 val_cur_time = res_def[0]
 val_time_in = res_def[1]
 val_time_out = res_def[2]
-
-
-
 firstCallDay = True
 firstCallNight = True
 
 while True:
 
     if (val_time_in <= val_cur_time <= val_time_out):
-        print('checkDay!!!')
 
         if firstCallDay:
             print('WorkMyCodOnvifDay')

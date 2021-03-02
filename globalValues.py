@@ -6,7 +6,7 @@ import traceback
 import sys
 
 # curDisk = 'S'
-curDisk = '/usr/local'
+curDisk = 'Data'
 
 # diskForTimeFiles = 'F'
 import tempfile

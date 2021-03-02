@@ -1,0 +1,12 @@
+rtsp://login:pwd@strIP:554/cam/realmonitor?channel=1&subtype=1
+rtsp://login:pwd@strIP:554/cam/realmonitor?channel=1&subtype=1
+rtsp://login:pwd@strIP:554/Streaming/Channels/102
+rtsp://login:pwd@strIP:554/Streaming/Channels/102
+rtsp://login:pwd@strIP:554/cam/realmonitor?channel=1&subtype=0
+rtsp://login:pwd@strIP:554/cam/realmonitor?channel=1&subtype=0
+rtsp://login:pwd@strIP:554/cam/realmonitor?channel=1&subtype=0
+rtsp://login:pwd@strIP:554/cam/realmonitor?channel=1&subtype=0
+rtsp://login:pwd@strIP:554/cam/realmonitor?channel=1&subtype=0
+rtsp://login:pwd@strIP:554/cam/realmonitor?channel=1&subtype=0
+rtsp://login:pwd@strIP:554/cam/realmonitor?channel=1&subtype=0
+rtsp://login:pwd@strIP:554/cam/realmonitor?channel=1&subtype=0

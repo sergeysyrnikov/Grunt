@@ -1,29 +1,19 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'contextTabNew.ui'
-#
-# Created by: PyQt5 UI code generator 5.14.1
-#
-# WARNING! All changes made in this file will be lost!
-
-
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QDialog, QApplication
-from PyQt5.QtGui import QScreen
+from PyQt5.QtWidgets import QApplication, QLabel, QDialog, QPushButton, QFrame
+from PyQt5.QtGui import QFont
+from PyQt5.QtCore import Qt, QCoreApplication, QMetaObject, QRect, pyqtSignal, QEvent
+import sys
+import time
+import globalValues
+# import threading
+# import os
+# import pyautogui
+# import subprocess
 # import win32api
 # import win32con
-import time
-import threading
-import globalValues
-import os
-# import pyautogui
-import subprocess
-import sys
-
 
 class Ui_ContextTable(QDialog):
 
-    signalClickPyMouse = QtCore.pyqtSignal()
+    signalClickPyMouse = pyqtSignal()
 
     defCon = 99
 
@@ -40,11 +30,11 @@ class Ui_ContextTable(QDialog):
     def runUiContextTab(self):
         self.setObjectName("ContextTable")
         self.setFixedSize(1920, 1080)
-        self.setWindowFlags(QtCore.Qt.CustomizeWindowHint | QtCore.Qt.FramelessWindowHint | QtCore.Qt.WindowStaysOnTopHint)
+        self.setWindowFlags(Qt.CustomizeWindowHint | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
         self.setModal(True)
         self.setAutoFillBackground(False)
-        self.label_setscreen = QtWidgets.QLabel(self)
-        self.label_setscreen.setGeometry(QtCore.QRect(0, 0, 1920, 1080))
+        self.label_setscreen = QLabel(self)
+        self.label_setscreen.setGeometry(QRect(0, 0, 1920, 1080))
         pathImg = globalValues.curDisk + '/Sinaps/screenShot.png'
         # pathImg = pathImg.replace('\\', '/')
         print(pathImg)
@@ -52,55 +42,55 @@ class Ui_ContextTable(QDialog):
         self.label_setscreen.setStyleSheet("image: url(" + pathImg + ");")
         self.label_setscreen.setObjectName("label_setscreen")
 
-        self.label_gradient = QtWidgets.QLabel(self)
-        self.label_gradient.setGeometry(QtCore.QRect(0, 0, 1920, 1080))
+        self.label_gradient = QLabel(self)
+        self.label_gradient.setGeometry(QRect(0, 0, 1920, 1080))
         # self.label_gradient.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 211), stop:1 rgba(0, 0, 0, 210));")
         self.label_gradient.setStyleSheet("background-color: rgba(0, 0, 0, 0)")
         self.label_gradient.setObjectName("label_gradient")
 
-        self.frmConBtn = QtWidgets.QFrame(self)
-        self.frmConBtn.setGeometry(QtCore.QRect(110, 80, 161, 121))
+        self.frmConBtn = QFrame(self)
+        self.frmConBtn.setGeometry(QRect(110, 80, 161, 121))
 
-        self.frmConBtn.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frmConBtn.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frmConBtn.setFrameShape(QFrame.StyledPanel)
+        self.frmConBtn.setFrameShadow(QFrame.Raised)
         self.frmConBtn.setObjectName("frmConBtn")
-        self.btnConDef = QtWidgets.QPushButton(self.frmConBtn)
-        self.btnConDef.setGeometry(QtCore.QRect(0, 88, 161, 31))
-        font = QtGui.QFont()
+        self.btnConDef = QPushButton(self.frmConBtn)
+        self.btnConDef.setGeometry(QRect(0, 88, 161, 31))
+        font = QFont()
         font.setPointSize(12)
         self.btnConDef.setFont(font)
 
         self.btnConDef.setObjectName("btnConDef")
-        self.btnConSave = QtWidgets.QPushButton(self.frmConBtn)
-        self.btnConSave.setGeometry(QtCore.QRect(0, 30, 161, 31))
-        font = QtGui.QFont()
+        self.btnConSave = QPushButton(self.frmConBtn)
+        self.btnConSave.setGeometry(QRect(0, 30, 161, 31))
+        font = QFont()
         font.setPointSize(12)
         self.btnConSave.setFont(font)
 
         self.btnConSave.setObjectName("btnConSave")
-        self.btnConEdit = QtWidgets.QPushButton(self.frmConBtn)
-        self.btnConEdit.setGeometry(QtCore.QRect(0, 0, 161, 31))
-        font = QtGui.QFont()
+        self.btnConEdit = QPushButton(self.frmConBtn)
+        self.btnConEdit.setGeometry(QRect(0, 0, 161, 31))
+        font = QFont()
         font.setPointSize(12)
         self.btnConEdit.setFont(font)
 
         self.btnConEdit.setObjectName("btnConEdit")
-        self.btnConDel = QtWidgets.QPushButton(self.frmConBtn)
-        self.btnConDel.setGeometry(QtCore.QRect(0, 60, 161, 31))
-        font = QtGui.QFont()
+        self.btnConDel = QPushButton(self.frmConBtn)
+        self.btnConDel.setGeometry(QRect(0, 60, 161, 31))
+        font = QFont()
         font.setPointSize(12)
         self.btnConDel.setFont(font)
 
         self.btnConDel.setObjectName("btnConDel")
 
         self.retranslateUi()
-        QtCore.QMetaObject.connectSlotsByName(self)
+        QMetaObject.connectSlotsByName(self)
 
 
         self.firstSets()
 
     def retranslateUi(self):
-        _translate = QtCore.QCoreApplication.translate
+        _translate = QCoreApplication.translate
         self.setWindowTitle(_translate("ContextTable", "Dialog"))
         self.btnConDef.setText(_translate("ContextTable", "По умолчанию"))
         self.btnConSave.setText(_translate("ContextTable", "Сохранить"))
@@ -366,18 +356,18 @@ class Ui_ContextTable(QDialog):
             if ((source is self.btnConEdit) or (source is self.btnConSave) or (source is self.btnConDel) or (source is self.btnConDef)):
                 checkEventBtn = True
 
-            if ((source is self.btnConEdit) and event.type() == QtCore.QEvent.MouseButtonPress and
-                    event.buttons() == QtCore.Qt.LeftButton):
+            if ((source is self.btnConEdit) and event.type() == QEvent.MouseButtonPress and
+                    event.buttons() == Qt.LeftButton):
                 globalValues.checkEditMode = True
 
 
-            if (event.type() == QtCore.QEvent.MouseButtonPress and
-                    event.buttons() == QtCore.Qt.LeftButton and
+            if (event.type() == QEvent.MouseButtonPress and
+                    event.buttons() == Qt.LeftButton and
                     checkEventBtn):
                     print('checkingBtnClick')
 
-            if (event.type() == QtCore.QEvent.MouseButtonPress and
-                    event.buttons() == QtCore.Qt.LeftButton and
+            if (event.type() == QEvent.MouseButtonPress and
+                    event.buttons() == Qt.LeftButton and
                     checkEventBtn == False):
                 print('Checkqwe:', globalValues.checkEditMode)
                 if (globalValues.checkEditMode == False):
@@ -419,10 +409,9 @@ class Ui_ContextTable(QDialog):
     #     except Exception as ex:
     #         globalValues.writeLogData('Поток обработки события клика мыши', str(ex))
 
-
 if __name__ == "__main__":
     import sys
-    app = QtWidgets.QApplication(sys.argv)
+    app = QApplication(sys.argv)
     ui = Ui_ContextTable()
     ui.show()
     sys.exit(app.exec_())

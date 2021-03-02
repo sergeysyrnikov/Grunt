@@ -1,4 +1,4 @@
-import hashlib
+from hashlib import sha512
 import pymysql
 
 # login_new = 'operator'
@@ -7,14 +7,11 @@ import pymysql
 login_new = 'admin'
 password = 'sinaps'
 
-hash = hashlib.sha512(password.encode())
+hash = sha512(password.encode())
 data = str(hash.hexdigest())
 
 con = pymysql.connect('localhost', 'sergey',
                       '34ubitav', 'cars')
-
-
-
 
 # with con:
 if True:

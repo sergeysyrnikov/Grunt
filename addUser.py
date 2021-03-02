@@ -1,5 +1,6 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QDialog
+from PyQt5.QtWidgets import QApplication, QLabel, QDialog, QLineEdit, QPushButton
+from PyQt5.QtGui import QFont
+from PyQt5.QtCore import Qt, QCoreApplication, QMetaObject, QRect
 import globalValues
 import time
 import sys
@@ -9,9 +10,9 @@ from base64 import b64decode, b64encode
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
 # import win32com.client
-import openpyxl
+from openpyxl import load_workbook
 
-app = QtWidgets.QApplication(sys.argv)
+app = QApplication(sys.argv)
 
 globalValues.colorForm = 0
 
@@ -31,31 +32,31 @@ class Ui_addUser(QDialog):
     def runUi(self):
         self.setObjectName("Dialog")
         self.setFixedSize(290, 128)
-        self.leLogin = QtWidgets.QLineEdit(self)
-        self.leLogin.setGeometry(QtCore.QRect(10, 10, 271, 31))
-        font = QtGui.QFont()
+        self.leLogin = QLineEdit(self)
+        self.leLogin.setGeometry(QRect(10, 10, 271, 31))
+        font = QFont()
         font.setFamily("Arial")
         font.setPointSize(12)
         self.leLogin.setFont(font)
         self.leLogin.setObjectName("leLogin")
-        self.butInput = QtWidgets.QPushButton(self)
-        self.butInput.setGeometry(QtCore.QRect(95, 90, 101, 26))
-        font = QtGui.QFont()
+        self.butInput = QPushButton(self)
+        self.butInput.setGeometry(QRect(95, 90, 101, 26))
+        font = QFont()
         font.setFamily("Arial")
         font.setPointSize(10)
         font.setBold(False)
         font.setWeight(50)
         self.butInput.setFont(font)
         self.butInput.setObjectName("butInput")
-        self.lePassword = QtWidgets.QLineEdit(self)
-        self.lePassword.setGeometry(QtCore.QRect(10, 47, 271, 31))
-        font = QtGui.QFont()
+        self.lePassword = QLineEdit(self)
+        self.lePassword.setGeometry(QRect(10, 47, 271, 31))
+        font = QFont()
         font.setFamily("Arial")
         font.setPointSize(12)
         self.lePassword.setFont(font)
         self.lePassword.setObjectName("lePassword")
-        self.label = QtWidgets.QLabel(self)
-        self.label.setGeometry(QtCore.QRect(0, 0, 291, 131))
+        self.label = QLabel(self)
+        self.label.setGeometry(QRect(0, 0, 291, 131))
         self.label.setText("")
         self.label.setObjectName("label")
         self.label.raise_()
@@ -64,12 +65,12 @@ class Ui_addUser(QDialog):
         self.leLogin.raise_()
 
         self.retranslateUi()
-        QtCore.QMetaObject.connectSlotsByName(self)
+        QMetaObject.connectSlotsByName(self)
         # self.runThJournal()
         self.firstCall()
 
     def retranslateUi(self):
-        _translate = QtCore.QCoreApplication.translate
+        _translate = QCoreApplication.translate
         self.setWindowTitle(_translate("Dialog", "Добавление пользователя"))
         # self.leLogin.setText(_translate("Dialog", "Логин"))
         self.butInput.setText(_translate("Dialog", "Добавить"))
@@ -81,47 +82,47 @@ class Ui_addUser(QDialog):
         self.lePassword.setPlaceholderText('Пароль')
 
         self.lstLight = [[self.leLogin,"background-color: rgb(255,255,255);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border: 1px solid rgb(150,150,150);"],
-        [self.butInput,"QPushButton:!hover {background-color: rgb(227,227,227);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(135,135,135);}\n"
-"QPushButton:hover {background-color: rgb(84,122,181);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);}\n"
-"QPushButton:hover:pressed {background-color: rgb(50,75,115);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);};"],
-        [self.lePassword,"background-color: rgb(255,255,255);\n"
-"color: rgb(0,0,0);\n"
-"border-radius:3px;\n"
-"border: 1px solid rgb(150,150,150);"],
+        "color: rgb(0,0,0);\n"
+        "border-radius:3px;\n"
+        "border: 1px solid rgb(150,150,150);"],
+                [self.butInput,"QPushButton:!hover {background-color: rgb(227,227,227);\n"
+        "color: rgb(0,0,0);\n"
+        "border-radius:3px;\n"
+        "border:1px solid rgb(135,135,135);}\n"
+        "QPushButton:hover {background-color: rgb(84,122,181);\n"
+        "color: rgb(255, 255, 255);\n"
+        "border-radius:3px;\n"
+        "border:1px solid rgb(63,63,63);}\n"
+        "QPushButton:hover:pressed {background-color: rgb(50,75,115);\n"
+        "color: rgb(255, 255, 255);\n"
+        "border-radius:3px;\n"
+        "border:1px solid rgb(63,63,63);};"],
+                [self.lePassword,"background-color: rgb(255,255,255);\n"
+        "color: rgb(0,0,0);\n"
+        "border-radius:3px;\n"
+        "border: 1px solid rgb(150,150,150);"],
         [self.label,"background-color: rgb(242,242,242);"]]
         self.lstDark = [[self.leLogin,"background-color: rgb(42, 42, 42);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius: 3px;"],
-        [self.butInput,"QPushButton:!hover {background-color: rgb(89,89,89);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);}\n"
-"QPushButton:hover {background-color: rgb(84,122,181);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);}\n"
-"QPushButton:hover:pressed {background-color: rgb(50,75,115);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius:3px;\n"
-"border:1px solid rgb(63,63,63);};"],
-        [self.lePassword,"background-color: rgb(42, 42, 42);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius: 3px;"],
+        "color: rgb(255, 255, 255);\n"
+        "border-radius: 3px;"],
+                [self.butInput,"QPushButton:!hover {background-color: rgb(89,89,89);\n"
+        "color: rgb(255, 255, 255);\n"
+        "border-radius:3px;\n"
+        "border:1px solid rgb(63,63,63);}\n"
+        "QPushButton:hover {background-color: rgb(84,122,181);\n"
+        "color: rgb(255, 255, 255);\n"
+        "border-radius:3px;\n"
+        "border:1px solid rgb(63,63,63);}\n"
+        "QPushButton:hover:pressed {background-color: rgb(50,75,115);\n"
+        "color: rgb(255, 255, 255);\n"
+        "border-radius:3px;\n"
+        "border:1px solid rgb(63,63,63);};"],
+                [self.lePassword,"background-color: rgb(42, 42, 42);\n"
+        "color: rgb(255, 255, 255);\n"
+        "border-radius: 3px;"],
         [self.label,"background-color: rgb(62,62,62);"]]
 
-        self.lePassword.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.lePassword.setEchoMode(QLineEdit.Password)
         self.lengthLight = len(self.lstLight)
         self.lengthDark = len(self.lstDark)
         self.changeCOLORMainPanelGrunt(0.1)
@@ -217,7 +218,7 @@ class Ui_addUser(QDialog):
                 pathXls = globalValues.pathFileXls
                 print(pathXls)
 
-                book = openpyxl.load_workbook(pathXls)
+                book = load_workbook(pathXls)
                 sheets = book.sheetnames
                 print('qwer')
                 for sheet in sheets:

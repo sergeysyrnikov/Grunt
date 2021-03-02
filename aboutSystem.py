@@ -1,12 +1,13 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QDialog
+from PyQt5.QtWidgets import QApplication, QLabel, QFrame, QDialog
+from PyQt5.QtGui import QFont
+from PyQt5.QtCore import Qt, QCoreApplication, QMetaObject, QRect
 import time
 import sys
 import globalValues
 
 globalValues.colorForm = 1
 
-app = QtWidgets.QApplication(sys.argv)
+app = QApplication(sys.argv)
 
 class Ui_about_system_menu(QDialog):
 
@@ -25,37 +26,37 @@ class Ui_about_system_menu(QDialog):
         self.setObjectName("Dialog")
         self.resize(1000, 309)
         self.setStyleSheet("")
-        self.label = QtWidgets.QLabel(self)
-        self.label.setGeometry(QtCore.QRect(370, -5, 295, 47))
-        font = QtGui.QFont()
+        self.label = QLabel(self)
+        self.label.setGeometry(QRect(370, -5, 295, 47))
+        font = QFont()
         font.setFamily("Arial")
         font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
         self.label.setFont(font)
         self.label.setObjectName("label")
-        self.lblIconJournal = QtWidgets.QLabel(self)
-        self.lblIconJournal.setGeometry(QtCore.QRect(340, 8, 23, 23))
+        self.lblIconJournal = QLabel(self)
+        self.lblIconJournal.setGeometry(QRect(340, 8, 23, 23))
         self.lblIconJournal.setText("")
         self.lblIconJournal.setObjectName("lblIconJournal")
-        self.line = QtWidgets.QFrame(self)
-        self.line.setGeometry(QtCore.QRect(342, 31, 318, 8))
-        self.line.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line = QFrame(self)
+        self.line.setGeometry(QRect(342, 31, 318, 8))
+        self.line.setFrameShape(QFrame.HLine)
+        self.line.setFrameShadow(QFrame.Sunken)
         self.line.setObjectName("line")
-        self.label_134 = QtWidgets.QLabel(self)
-        self.label_134.setGeometry(QtCore.QRect(13, 53, 991, 251))
-        font = QtGui.QFont()
+        self.label_134 = QLabel(self)
+        self.label_134.setGeometry(QRect(13, 53, 991, 251))
+        font = QFont()
         font.setFamily("Arial")
         font.setPointSize(10)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
         self.label_134.setFont(font)
-        self.label_134.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.label_134.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.label_134.setObjectName("label_134")
-        self.lblBack = QtWidgets.QLabel(self)
-        self.lblBack.setGeometry(QtCore.QRect(0, 0, 1000, 311))
+        self.lblBack = QLabel(self)
+        self.lblBack.setGeometry(QRect(0, 0, 1000, 311))
         self.lblBack.setText("")
         self.lblBack.setObjectName("lblBack")
         self.lblBack.raise_()
@@ -65,12 +66,12 @@ class Ui_about_system_menu(QDialog):
         self.line.raise_()
 
         self.retranslateUi()
-        QtCore.QMetaObject.connectSlotsByName(self)
+        QMetaObject.connectSlotsByName(self)
         # self.runThJournal()
         self.firstCall()
 
     def retranslateUi(self):
-        _translate = QtCore.QCoreApplication.translate
+        _translate = QCoreApplication.translate
         self.setWindowTitle(_translate("Dialog", "Панель справки"))
         self.label.setText(_translate("Dialog", "Справка \"Панель управления\""))
         self.label_134.setText(_translate("Dialog", "    Меню панели управления имеет 4 кнопки управления: \"Журнал событий\", \"Журнал ЗН Т/С\", \"Добавить З/Н\", \"База ТС\". \n"
@@ -91,25 +92,25 @@ class Ui_about_system_menu(QDialog):
     def firstCall(self):
 
         self.lstLight = [[self.label,"background-color: rgb(242,242,242);\n"
-"color: black;\n"
-"border-radius: 5px;"],
-        [self.lblIconJournal,"background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(89, 89, 89, 0), stop:1 rgba(62, 62, 62, 0));\n"
-"image: url(" + globalValues.pathStyleImgs + "iconworkpanel1.png);"],
-        [self.label_134,"background-color: rgb(242,242,242);\n"
-"color: black;\n"
-"font: 10pt \"Arial\";"],
-        [self.lblBack,"background-color: rgb(242,242,242);\n"
-"gridline-color: rgb(20, 18, 57);"]]
+        "color: black;\n"
+        "border-radius: 5px;"],
+                [self.lblIconJournal,"background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(89, 89, 89, 0), stop:1 rgba(62, 62, 62, 0));\n"
+        "image: url(" + globalValues.pathStyleImgs + "iconworkpanel1.png);"],
+                [self.label_134,"background-color: rgb(242,242,242);\n"
+        "color: black;\n"
+        "font: 10pt \"Arial\";"],
+                [self.lblBack,"background-color: rgb(242,242,242);\n"
+        "gridline-color: rgb(20, 18, 57);"]]
         self.lstDark = [[self.label,"background-color: rgb(66,66,66);\n"
-"color: rgb(255,255,255);\n"
-"border-radius: 5px;"],
-        [self.lblIconJournal,"background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(89, 89, 89, 0), stop:1 rgba(62, 62, 62, 0));\n"
-"image: url(" + globalValues.pathStyleImgs + "iconworkpanel1.png);"],
-        [self.label_134,"background-color: rgb(66,66,66);\n"
-"color: white;\n"
-"font: 10pt \"Arial\";"],
-        [self.lblBack,"background-color: rgb(66,66,66);\n"
-"gridline-color: rgb(20, 18, 57);"]]
+        "color: rgb(255,255,255);\n"
+        "border-radius: 5px;"],
+                [self.lblIconJournal,"background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(89, 89, 89, 0), stop:1 rgba(62, 62, 62, 0));\n"
+        "image: url(" + globalValues.pathStyleImgs + "iconworkpanel1.png);"],
+                [self.label_134,"background-color: rgb(66,66,66);\n"
+        "color: white;\n"
+        "font: 10pt \"Arial\";"],
+                [self.lblBack,"background-color: rgb(66,66,66);\n"
+        "gridline-color: rgb(20, 18, 57);"]]
 
 
         self.lengthLight = len(self.lstLight)
@@ -155,7 +156,7 @@ class Ui_about_system_menu(QDialog):
 
 
 if __name__ == "__main__":
-    # app = QtWidgets.QApplication(sys.argv)
+    # app = QApplication(sys.argv)
     uiJournal = Ui_about_system_menu()
 
     uiJournal.show()
