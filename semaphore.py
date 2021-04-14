@@ -1,20 +1,22 @@
 import serial
 import logging
 import time
+import pathlib
 
 logging.basicConfig(level=logging.DEBUG)
 
 #func working with semaphore
 def semaphore(queue_, port_sema):
+
     iter = 0
     time_start = 0
     check_start = True
 
     while True:
+
         if (check_start):
             try:
-                lst_ports = port_sema.split(' ')
-                port_sema = '/dev/ttyS' + lst_ports[1]
+                port_sema = str(pathlib.Path().joinpath('/dev/ttyS',  port_sema))
 
                 ser_traffic = serial.Serial(
                     port=port_sema,
@@ -26,6 +28,7 @@ def semaphore(queue_, port_sema):
 
                 logging.debug('Opening sema port: %s.' % port_sema)
 
+                #values for control controller_oven_discretes
                 values_default_checking = bytearray([0x40, 0x31, 0x30, 0x41, 0x31, 0x0D])
                 values_default_data_green_default_in = bytearray([0x40, 0x31, 0x30, 0x30, 0x33, 0x30, 0x34, 0x0D])
                 values_default_traffic_light_green_out = bytearray([0x40, 0x31, 0x30, 0x30, 0x34, 0x30, 0x35, 0x0D])
@@ -35,8 +38,6 @@ def semaphore(queue_, port_sema):
                 millis = int(round(time.time() * 1000))
                 val_iter = 0
                 line = []
-                lineNew = []
-                time_get_data_traffic = round(time.time())
                 time_start = round(time.time())
                 check_start = True
                 data_queue = ''
@@ -56,7 +57,7 @@ def semaphore(queue_, port_sema):
                     for c in ser_traffic.read():
                         h = hex(c)
                         line.append(h)
-                        lineNew.append(h)
+                        # lineNew.append(h)
                         # countLine = len(line)
                         # may be h = 0xd or 0x0D
                         if h == '0xd':

@@ -16,8 +16,7 @@ def weight(queue_, port_weight, data):
         while True:
             if (check_start):
                 try:
-                    lst_ports = port_weight.split(' ')
-                    port_weight = pathlib.Path.joinpath('/dev/ttyS', lst_ports[1])
+                    port_weight = str(pathlib.Path().joinpath('/dev/ttyS', port_weight))
                     logging.debug('Port weight: %s' % port_weight)
 
                     ser_weight = serial.Serial(
