@@ -153,7 +153,7 @@ def weight(queue_, port_weight, data):
                 time_start = round(time.time())
                 check_start = False
 
-            if (abs(round(time.time() - time_start)) >= 2):
+            if (abs(round(time.time() - time_start)) >= 5):
                 iter += 1
                 check_start = True
                 if (iter >= 5):
